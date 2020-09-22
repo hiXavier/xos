@@ -1,0 +1,18 @@
+dubbo:
+  application:
+    name: service-provider
+  scan:
+    base-packages:  com.xavier.xos.apo # dubbo服务发布者所在的包
+  registry:
+    address: 10.3.246.104 # zookeeper注册中心的地址
+    port: 2181       # zookeeper注册中心的端口
+    protocol: zookeeper
+    register: true
+  protocol:
+    name: dubbo
+    port: 20880
+    accesslog: true
+  provider:
+    retries: 1
+    delay: -1
+    version: 1.0.0
