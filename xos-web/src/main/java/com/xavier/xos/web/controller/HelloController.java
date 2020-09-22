@@ -1,13 +1,11 @@
 package com.xavier.xos.web.controller;
 
 
+import com.xavier.xos.api.domain.req.UploadRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author wuyanfeng
@@ -23,6 +21,12 @@ public class HelloController {
     @GetMapping("/sayHi")
     public ResponseEntity<String> sayHi(@RequestParam("name")String name){
         return ResponseEntity.ok("Hi:"+name);
+    }
+
+    @ApiOperation(value = "向客人问好")
+    @PostMapping("/say")
+    public ResponseEntity<String> sayHeyEveryBody(UploadRequest uploadRequest){
+        return ResponseEntity.ok("Hi:"+ uploadRequest.getAccessKey());
     }
 }
 

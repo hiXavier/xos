@@ -31,7 +31,7 @@ public class Knife4jConfig {
                 .groupName("测试分组")
                 .select()
                 //这里指定Controller扫描包路径
-                .apis(RequestHandlerSelectors.basePackage("com.xavier.xos.web.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.xavier.xos"))
                 .paths(PathSelectors.any())
                 .build();
         return docket;
