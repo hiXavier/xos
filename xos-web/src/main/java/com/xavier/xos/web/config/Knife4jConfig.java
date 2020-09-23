@@ -27,6 +27,7 @@ public class Knife4jConfig {
     public Docket defaultApi2() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
+                .enable(true)
                 //分组名称
                 .groupName("测试分组")
                 .select()

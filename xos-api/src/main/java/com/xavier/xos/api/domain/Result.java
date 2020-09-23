@@ -92,16 +92,6 @@ public class Result<T> implements Serializable {
         this.setData(data);
     }
 
-    public void setApmSuccessData(T data) {
-        this.setEnum(ResultEnum.SUCCESS_CLIENT);
-        this.setData(data);
-    }
-
-    public void setApmFailureData(T data) {
-        this.setEnum(ResultEnum.FAILURE_CLIENT);
-        this.setData(data);
-    }
-    
     @Override
     public String toString() {
         return "Result [code=" + code + ", message=" + message + ", data=" + data + "]";
